@@ -1,16 +1,21 @@
 class Todo {
-  constructor() {}
-  static makeHtmlEl(title) {
-    return `
+  constructor(title) {
+    this.title = title;
+    this.htmlLiEl = "";
+    this.makeHtmlEl();
+    this.addTodoToList();
+  }
+  makeHtmlEl() {
+    this.htmlLiEl = `
           <li class="item">
               <i class="fa fa-circle-thin" aria-hidden="true"></i>
-              <span class="text">${title}</span>
+              <span class="text">${this.title}</span>
               <i class="fa fa-pencil" aria-hidden="true"></i>
               <i class="fa fa-trash" aria-hidden="true"></i>
             </li>
           `;
   }
-  static addTodoToList(todo) {
-    ulListEl.insertAdjacentHTML("beforeend", todo);
+  addTodoToList() {
+    ulListEl.insertAdjacentHTML("beforeend", this.htmlLiEl);
   }
 }
