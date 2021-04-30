@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo simple</title>
+    <style>
+      .del {
+        cursor: pointer;
+      }
+    </style>
     <script src="./app.js" defer></script>
   </head>
   <body>
@@ -14,8 +19,12 @@
       <button>Add Todo</button>
     </div>
     <ul class="list">
-      <li>Buy milk</li>
-      <li>Do sports</li>
+      <li>
+        <span class="li-text">Buy milk</span>
+        <span class="del">&#x2612;</span>
+        <button>edit</button>
+      </li>
+      <li>Do sports <span class="del">&#x2612;</span></li>
     </ul>
   </body>
 </html>
