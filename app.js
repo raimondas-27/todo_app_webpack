@@ -27,13 +27,24 @@ addTodoBtnEl.addEventListener("click", function (event) {
 
 // uzdedam even listeneri ant ul saraso
 mainListUlEl.addEventListener("click", function (event) {
-  //   console.log(event.target);
+  console.log(event.target);
   // gauti klase
-  console.log(event.target.className);
+  //   console.log(event.target.className);
 
   // jei el ant kurio paspauziau turi klase 'del'
   if (event.target.className === "del") {
     //tai mes norim istrinti tevini jo el
+    event.target.parentElement.remove();
+  }
+  // contains - grazina true jei tokia klase yra tar el klasiu saraso
+  if (event.target.classList.contains("edit")) {
+    // perkelti to todo el reiksme i input el
+    let dabartineTodoReiksme =
+      event.target.previousElementSibling.previousElementSibling.textContent;
+    console.log(dabartineTodoReiksme);
+    inputEl.value = dabartineTodoReiksme;
+
+    // issaugi ta reiksme atgal i el
     event.target.parentElement.remove();
   }
 
@@ -49,7 +60,7 @@ function createNewLiEl(ivestaReiksme) {
   naujasLiEl.innerHTML = `
   <span class='li-text'>${ivestaReiksme}</span>
   <span class="del">&#x2612;</span>
-   <button>edit</button>
+  <button class='edit yese' >edit</button>
   `;
 
   return naujasLiEl;
