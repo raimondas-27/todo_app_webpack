@@ -17,17 +17,7 @@ addTodoBtnEl.addEventListener("click", function (event) {
   if (ivestaReiksme === "") return;
 
   // 2 dedam i sarasa kaip li el
-  // sukuriam nauja li
-  const naujasLiEl = document.createElement("li");
-  // ideam vartotojo reiksme
-  //   naujasLiEl.textContent = ivestaReiksme;
-  naujasLiEl.insertAdjacentHTML("afterbegin", `<span class='li-text'>${ivestaReiksme}</span>`);
-
-  // pridedam span su istrynimu
-  naujasLiEl.insertAdjacentHTML("beforeend", ' <span class="del">&#x2612;</span>');
-
-  // pridedam edit mygtuka
-  naujasLiEl.insertAdjacentHTML("beforeend", " <button>edit</button>");
+  const naujasLiEl = createNewLiEl(ivestaReiksme);
 
   // idedam i sarasa nauja li el su tekxtu
   mainListUlEl.appendChild(naujasLiEl);
@@ -50,3 +40,19 @@ mainListUlEl.addEventListener("click", function (event) {
   //event.target.style.color = "coral";
   //   event.target.remove();
 });
+
+function createNewLiEl(ivestaReiksme) {
+  // sukuriam nauja li
+  const naujasLiEl = document.createElement("li");
+  // ideam vartotojo reiksme
+  //   naujasLiEl.textContent = ivestaReiksme;
+  naujasLiEl.insertAdjacentHTML(
+    "afterbegin",
+    `
+  <span class='li-text'>${ivestaReiksme}</span>
+  <span class="del">&#x2612;</span>
+   <button>edit</button>
+  `
+  );
+  return naujasLiEl;
+}
