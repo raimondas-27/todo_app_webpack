@@ -46,13 +46,11 @@ function createNewLiEl(ivestaReiksme) {
   const naujasLiEl = document.createElement("li");
   // ideam vartotojo reiksme
   //   naujasLiEl.textContent = ivestaReiksme;
-  naujasLiEl.insertAdjacentHTML(
-    "afterbegin",
-    `
+  naujasLiEl.innerHTML = `
   <span class='li-text'>${ivestaReiksme}</span>
   <span class="del">&#x2612;</span>
    <button>edit</button>
-  `
-  );
+  `;
+
   return naujasLiEl;
 }
