@@ -1,5 +1,7 @@
 "use strict"; // here we go again
 
+const todosArr = ["buy milk", "do stuff"];
+
 // reikalingos nuorodo i elementus kuriuos valdysime
 const inputEl = document.getElementById("todo-input");
 const addTodoBtnEl = inputEl.nextElementSibling;
@@ -65,3 +67,5 @@ function createNewLiEl(ivestaReiksme) {
 
   return naujasLiEl;
 }
+
+// rteikia gauti visa esama sara li elementu
