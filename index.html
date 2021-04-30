@@ -2,29 +2,50 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo simple</title>
-    <style>
-      .del {
-        cursor: pointer;
-      }
-    </style>
-    <script src="./app.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
   </head>
+
   <body>
-    <h1>Todo</h1>
-    <div class="input-container">
-      <input type="text" placeholder="Add Todo" id="todo-input" />
-      <button>Add Todo</button>
+    <div class="container">
+      <header>
+        <div class="clear">
+          <i class="fa fa-refresh"></i>
+        </div>
+        <p id="date" class="date">Date</p>
+        <img class="img-fluid cover-img" src="./gold.jpg" alt="Cover image" />
+      </header>
+      <section class="content">
+        <ul id="list" class="list">
+          <li class="item">
+            <i class="fa fa-circle-thin" aria-hidden="true"></i>
+            <span class="text">Drink coffe</span>
+
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </li>
+          <li class="item">
+            <i class="fa fa-circle-thin" aria-hidden="true"></i>
+            <span class="text">Go to park</span>
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </li>
+          <li class="item">
+            <i class="fa fa-circle-thin" aria-hidden="true"></i>
+            <span class="text">Walk a dog</span>
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </li>
+        </ul>
+        <div class="add-item">
+          <i id="add-todo-btn" class="fa fa-plus-circle" aria-hidden="true"></i>
+          <input type="text" id="input" placeholder="Add todo" />
+        </div>
+      </section>
     </div>
-    <ul class="list">
-      <li>
-        <span class="li-text">Buy milk</span>
-        <span class="del">&#x2612;</span>
-        <button class="edit">edit</button>
-      </li>
-      <li>Do sports <span class="del">&#x2612;</span></li>
-    </ul>
+    <script src="./app.js"></script>
+    <!-- <script src="./arrow.js"></script> -->
   </body>
 </html>
