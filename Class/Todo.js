@@ -10,4 +10,7 @@ class Todo {
             </li>
           `;
   }
+  static addTodoToList(todo) {
+    ulListEl.insertAdjacentHTML("beforeend", todo);
+  }
 }
