@@ -1,5 +1,8 @@
 "use strict"; // here we go again
 
+const ATLIKTAS_TODO = "fa-check-circle";
+const NEATLIKTAS_TODO = "fa-circle-thin";
+
 // gauti nuoroda i id list
 const ulListEl = document.getElementById("list");
 const mainInputEl = document.getElementById("input");
@@ -34,10 +37,11 @@ ulListEl.addEventListener("click", function (event) {
   // console.log(event.target);
   // delete trigger
   if (event.target.classList.contains("delete-icon")) {
-    console.log("delete");
+    // console.log("delete");
     Actions.deleteTodoItem(event.target);
   }
 
+  // Pazymeti kaip atlikta arba neatlikta todo el
   // check uncheck trigger
   if (current.classList.contains("make-done")) {
     console.log("Make it done");
@@ -54,4 +58,10 @@ mainInputEl.addEventListener("keyup", function (event) {
   }
 });
 
-// Pazymeti kaip atlikta arba neatlikta todo el
+// laikas
+function showTime() {
+  let now = new Date();
+  const options = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
+  console.log(now.toLocaleDateString("LT", options));
+}
+showTime();
