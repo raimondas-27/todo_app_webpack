@@ -29,6 +29,29 @@ function addTodoTextToList() {
 addTodoBtnEl.addEventListener("click", addTodoTextToList);
 
 ulListEl.addEventListener("click", function (event) {
+  let current = event.target;
   // event.target grazina el ant kurio paspaudem
-  console.log(event.target);
+  // console.log(event.target);
+  // delete trigger
+  if (event.target.classList.contains("delete-icon")) {
+    console.log("delete");
+    Actions.deleteTodoItem(event.target);
+  }
+
+  // check uncheck trigger
+  if (current.classList.contains("make-done")) {
+    console.log("Make it done");
+    Actions.toggleComplete(current);
+  }
 });
+
+// sureaguoti i enter paspaudima ivestieslauke
+mainInputEl.addEventListener("keyup", function (event) {
+  // console.log("event", event);
+  // kai event.key === enter mes norime sukurti nauja list el savo sarase
+  if (event.key === "Enter") {
+    addTodoTextToList();
+  }
+});
+
+// Pazymeti kaip atlikta arba neatlikta todo el
