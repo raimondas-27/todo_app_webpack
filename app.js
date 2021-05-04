@@ -7,6 +7,7 @@ const NEATLIKTAS_TODO = "fa-circle-thin";
 const ulListEl = document.getElementById("list");
 const mainInputEl = document.getElementById("input");
 const addTodoBtnEl = document.getElementById("add-todo-btn");
+const dateEl = document.getElementById("date");
 // Todo.addTodoToList(td1);
 
 // paimti teksta is input el
@@ -58,10 +59,16 @@ mainInputEl.addEventListener("keyup", function (event) {
   }
 });
 
-// laikas
-function showTime() {
+// laikas IFFE
+(function showTime() {
   let now = new Date();
   const options = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
-  console.log(now.toLocaleDateString("LT", options));
-}
-showTime();
+  const data = now.toLocaleDateString("LT", options);
+  // set interval vygdo funkcija kas intervale nurodyta laika milisekundem
+  let laikas;
+  setInterval(() => {
+    now = new Date();
+    laikas = now.toLocaleTimeString();
+    dateEl.textContent = data + " " + laikas;
+  }, 1000);
+})();
