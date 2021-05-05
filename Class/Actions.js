@@ -70,5 +70,7 @@ class Actions {
 
   static resetTodos() {
     console.log("Reseting todos");
+    // ul elemtnto vidini html prilyginti ''
+    ulListEl.innerHTML = "";
   }
 }
