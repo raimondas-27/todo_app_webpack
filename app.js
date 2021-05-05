@@ -4,10 +4,11 @@ const ATLIKTAS_TODO = "fa-check-circle";
 const NEATLIKTAS_TODO = "fa-circle-thin";
 
 // gauti nuoroda i id list
-const ulListEl = document.getElementById("list");
-const mainInputEl = document.getElementById("input");
-const addTodoBtnEl = document.getElementById("add-todo-btn");
-const dateEl = document.getElementById("date");
+const ulListEl = document.getElementById("list"),
+  mainInputEl = document.getElementById("input"),
+  addTodoBtnEl = document.getElementById("add-todo-btn"),
+  dateEl = document.getElementById("date"),
+  resetBntEl = document.getElementById("reset");
 // Todo.addTodoToList(td1);
 
 // paimti teksta is input el
@@ -73,13 +74,20 @@ mainInputEl.addEventListener("keyup", function (event) {
   const options = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
   const data = now.toLocaleDateString("LT", options);
   // set interval vygdo funkcija kas intervale nurodyta laika milisekundem
-  dateEl.innerHTML = data;
-  const spanEl = document.createComment("span");
+  dateEl.innerHTML = data + " ";
+  const spanEl = document.createElement("span");
   dateEl.appendChild(spanEl);
   let laikas;
   setInterval(() => {
     now = new Date();
     laikas = now.toLocaleTimeString();
-    spanEl.innerHTML = laikas;
+    spanEl.textContent = laikas;
   }, 1000);
 })();
+
+// 1 gauti nuoroda i reset mygtuka
+
+// 2 sureaguoti i mygtuko paspaudima iskvieciam Actions metoda
+resetBntEl.addEventListener("click", Actions.resetTodos);
+
+// 3 Acions metode isvalyti todo elementus

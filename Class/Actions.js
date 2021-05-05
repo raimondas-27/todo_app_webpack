@@ -62,9 +62,13 @@ class Actions {
         todoSpan.textContent = newInputEl.value;
         // istrinam input
         newInputEl.remove();
-        todoSpan.style.display = "inline-block";
+        todoSpan.style.display = "inline";
         item.style.display = "inline-block";
       }
     });
+  }
+
+  static resetTodos() {
+    console.log("Reseting todos");
   }
 }
