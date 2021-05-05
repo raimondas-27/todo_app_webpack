@@ -35,8 +35,17 @@ class Actions {
     // surandam todoSpan elementa kuriame todo textas
     const todoSpan = liEl.querySelector(".text");
     const esamasTodoText = todoSpan.textContent;
-    console.log(todoSpan, esamasTodoText);
+    // console.log(todoSpan, esamasTodoText);
 
-    // sukurti nauja input el ir jo viduje patalpinti texkta
+    // sukurti nauja input el
+    const newInputEl = document.createElement("input");
+
+    // ir jo viduje patalpinti texkta
+    newInputEl.value = esamasTodoText;
+    console.log(newInputEl);
+
+    // ta nauja el patalpinti vietoj span
+    todoSpan.before(newInputEl);
+    todoSpan.style.display = "none";
   }
 }
