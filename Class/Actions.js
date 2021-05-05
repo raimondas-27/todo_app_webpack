@@ -26,9 +26,19 @@ class Actions {
       item.classList.add(ATLIKTAS_TODO);
     }
   }
-
+  static primaKartaPaspaudemEdit = true;
   static editTodoItem(item) {
     console.log("edit TOdo in action");
+    // atskirti
+    // 1 ar mes jau editinam item (matom input el)
+    if (Actions.primaKartaPaspaudemEdit === true) {
+      console.log("editinam");
+    } else {
+      console.log("uzbagiam edit");
+    }
+    // 2 ar mes paspaudme pirma karta
+
+    // item.style.display = "none";
 
     // gaunam li el kuris yra paspaustos ikoneles tevas
     const liEl = item.parentElement;
@@ -47,5 +57,23 @@ class Actions {
     // ta nauja el patalpinti vietoj span
     todoSpan.before(newInputEl);
     todoSpan.style.display = "none";
+
+    // klausytis enter paspaudimo ant musu input
+    newInputEl.addEventListener("keyup", function (event) {
+      // kai paspausiu enter
+      if (event.key === "Enter") {
+        console.log("Enter aptiktas");
+        // paimam ivesties reiksme
+        console.log("newInputEl.value", newInputEl.value);
+
+        // perkeliam ja i span el
+        todoSpan.textContent = newInputEl.value;
+        // istrinam input
+        newInputEl.remove();
+        todoSpan.style.display = "inline-block";
+        // item.style.display = "inline-block";
+      }
+    });
+    Actions.primaKartaPaspaudemEdit = false;
   }
 }
