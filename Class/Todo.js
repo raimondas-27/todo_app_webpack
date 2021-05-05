@@ -10,7 +10,7 @@ class Todo {
           <li class="item">
               <i class="fa fa-circle-thin make-done" aria-hidden="true"></i>
               <span class="text">${this.title}</span>
-              <i class="fa fa-pencil" aria-hidden="true"></i>
+              <i class="fa fa-pencil edit-icon" aria-hidden="true"></i>
               <i class="fa fa-trash delete-icon" aria-hidden="true"></i>
             </li>
           `;

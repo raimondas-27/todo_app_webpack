@@ -26,4 +26,17 @@ class Actions {
       item.classList.add(ATLIKTAS_TODO);
     }
   }
+
+  static editTodoItem(item) {
+    console.log("edit TOdo in action");
+
+    // gaunam li el kuris yra paspaustos ikoneles tevas
+    const liEl = item.parentElement;
+    // surandam todoSpan elementa kuriame todo textas
+    const todoSpan = liEl.querySelector(".text");
+    const esamasTodoText = todoSpan.textContent;
+    console.log(todoSpan, esamasTodoText);
+
+    // sukurti nauja input el ir jo viduje patalpinti texkta
+  }
 }

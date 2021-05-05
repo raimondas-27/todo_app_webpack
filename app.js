@@ -32,6 +32,7 @@ function addTodoTextToList() {
 // mygtukui uztedi eventListener kad jis ivygdytu funkcija
 addTodoBtnEl.addEventListener("click", addTodoTextToList);
 
+// Pagrindinis musu ivykiu pasiklausymas ant musu TODO saraso ==================================
 ulListEl.addEventListener("click", function (event) {
   let current = event.target;
   // event.target grazina el ant kurio paspaudem
@@ -45,8 +46,15 @@ ulListEl.addEventListener("click", function (event) {
   // Pazymeti kaip atlikta arba neatlikta todo el
   // check uncheck trigger
   if (current.classList.contains("make-done")) {
-    console.log("Make it done");
+    // console.log("Make it done");
     Actions.toggleComplete(current);
+  }
+
+  // edit trigeris
+  if (current.classList.contains("edit-icon")) {
+    console.log("Edit in action");
+    // console.log(current);
+    Actions.editTodoItem(current);
   }
 });
 
@@ -65,10 +73,13 @@ mainInputEl.addEventListener("keyup", function (event) {
   const options = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
   const data = now.toLocaleDateString("LT", options);
   // set interval vygdo funkcija kas intervale nurodyta laika milisekundem
+  dateEl.innerHTML = data;
+  const spanEl = document.createComment("span");
+  dateEl.appendChild(spanEl);
   let laikas;
   setInterval(() => {
     now = new Date();
     laikas = now.toLocaleTimeString();
-    dateEl.textContent = data + " " + laikas;
+    spanEl.innerHTML = laikas;
   }, 1000);
 })();
