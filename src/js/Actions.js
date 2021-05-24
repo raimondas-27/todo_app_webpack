@@ -1,4 +1,4 @@
-class Actions {
+export default class Actions {
   constructor() {}
 
   static deleteTodoItem(item) {

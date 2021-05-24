@@ -1,5 +1,23 @@
 "use strict"; // here we go again
 
+import greet from "./js/greet.js";
+import Todo from "./js/Todo.js";
+import Actions from "./js/Actions.js";
+import "./css/main.css"
+import gold from "./img/gold.jpg";
+
+console.log(greet("auuuu!!!"))
+
+
+
+function addImageTo(importedImage) {
+  const srcEl = document.querySelector(".img-fluid");
+  srcEl.src = importedImage;
+}
+
+addImageTo(gold);
+
+
 const ATLIKTAS_TODO = "fa-check-circle";
 const NEATLIKTAS_TODO = "fa-circle-thin";
 
