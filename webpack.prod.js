@@ -4,8 +4,8 @@ const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-    mode: "development",
-    devtool: "source-map",
+    mode: "production",
+    // devtool: "source-map",
     entry: {
         main: path.resolve(__dirname, "./src/app.js")
     },
