@@ -1,12 +1,13 @@
-import ulListEl from "../app.js";
+import ulListEl from '../app.js';
 
 export default class Todo {
   constructor(title) {
     this.title = title;
-    this.htmlLiEl = "";
+    this.htmlLiEl = '';
     this.makeHtmlEl();
     this.addTodoToList();
   }
+
   makeHtmlEl() {
     this.htmlLiEl = `
           <li class="item">
@@ -17,7 +18,8 @@ export default class Todo {
             </li>
           `;
   }
+
   addTodoToList() {
-    ulListEl.insertAdjacentHTML("beforeend", this.htmlLiEl);
+    ulListEl.insertAdjacentHTML('beforeend', this.htmlLiEl);
   }
 }

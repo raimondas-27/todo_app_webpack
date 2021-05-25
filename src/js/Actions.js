@@ -1,5 +1,4 @@
-import ulListEl, {ATLIKTAS_TODO, NEATLIKTAS_TODO} from "../app.js";
-
+import ulListEl, { ATLIKTAS_TODO, NEATLIKTAS_TODO } from '../app.js';
 
 export default class Actions {
   constructor() {}
@@ -7,13 +6,14 @@ export default class Actions {
   static deleteTodoItem(item) {
     // closest iesko tevinio el
     // console.log(item.closest(".item"));
-    console.log("ivyko istrynimas");
+    console.log('ivyko istrynimas');
     // istrinti el
     item.parentElement.remove();
   }
+
   static toggleComplete(item) {
-    console.log("Check Unchek todo item ivyko");
-    item.parentElement.classList.toggle("line-through");
+    console.log('Check Unchek todo item ivyko');
+    item.parentElement.classList.toggle('line-through');
 
     // irgi veikia jei tinkamai uzdetos klases
     // item.classList.toggle(ATLIKTAS_TODO);
@@ -31,19 +31,19 @@ export default class Actions {
   }
 
   static editTodoItem(item) {
-    console.log("edit TOdo in action");
+    console.log('edit TOdo in action');
 
-    item.style.display = "none";
+    item.style.display = 'none';
 
     // gaunam li el kuris yra paspaustos ikoneles tevas
     const liEl = item.parentElement;
     // surandam todoSpan elementa kuriame todo textas
-    const todoSpan = liEl.querySelector(".text");
+    const todoSpan = liEl.querySelector('.text');
     const esamasTodoText = todoSpan.textContent;
     // console.log(todoSpan, esamasTodoText);
 
     // sukurti nauja input el
-    const newInputEl = document.createElement("input");
+    const newInputEl = document.createElement('input');
 
     // ir jo viduje patalpinti texkta
     newInputEl.value = esamasTodoText;
@@ -51,29 +51,29 @@ export default class Actions {
 
     // ta nauja el patalpinti vietoj span
     todoSpan.before(newInputEl);
-    todoSpan.style.display = "none";
+    todoSpan.style.display = 'none';
 
     // klausytis enter paspaudimo ant musu input
-    newInputEl.addEventListener("keyup", function (event) {
+    newInputEl.addEventListener('keyup', (event) => {
       // kai paspausiu enter
-      if (event.key === "Enter") {
-        console.log("Enter aptiktas");
+      if (event.key === 'Enter') {
+        console.log('Enter aptiktas');
         // paimam ivesties reiksme
-        console.log("newInputEl.value", newInputEl.value);
+        console.log('newInputEl.value', newInputEl.value);
 
         // perkeliam ja i span el
         todoSpan.textContent = newInputEl.value;
         // istrinam input
         newInputEl.remove();
-        todoSpan.style.display = "inline";
-        item.style.display = "inline-block";
+        todoSpan.style.display = 'inline';
+        item.style.display = 'inline-block';
       }
     });
   }
 
   static resetTodos() {
-    console.log("Reseting todos");
+    console.log('Reseting todos');
     // ul elemtnto vidini html prilyginti ''
-    ulListEl.innerHTML = "";
+    ulListEl.innerHTML = '';
   }
 }

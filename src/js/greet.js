@@ -1,6 +1,3 @@
-"use strict"
-
-export default function greet (word) {
-    return "bob says:" + word;
+export default function greet(word) {
+  return `bob says:${word}`;
 }
-
