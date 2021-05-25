@@ -18,8 +18,11 @@ function addImageTo(importedImage) {
 addImageTo(gold);
 
 
-const ATLIKTAS_TODO = "fa-check-circle";
-const NEATLIKTAS_TODO = "fa-circle-thin";
+export let ATLIKTAS_TODO = "fa-check-circle";
+export let NEATLIKTAS_TODO = "fa-circle-thin";
+
+
+
 
 // gauti nuoroda i id list
 const ulListEl = document.getElementById("list"),
@@ -30,6 +33,7 @@ const ulListEl = document.getElementById("list"),
 // Todo.addTodoToList(td1);
 
 // paimti teksta is input el
+export default ulListEl;
 
 // kai paspaustas + mygtukas skurti nauja todo el ir ideti ji i html
 
@@ -109,3 +113,5 @@ mainInputEl.addEventListener("keyup", function (event) {
 resetBntEl.addEventListener("click", Actions.resetTodos);
 
 // 3 Acions metode isvalyti todo elementus
+
+
