@@ -11,10 +11,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MariusCodeAcademy/js3_SImpleTODO.git"
+    "url": "git+https://github.com/raimondas-27/todo_app_webpack.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "R.K.",
+  "license": "MIT",
   "bugs": {
     "url": ""
   },

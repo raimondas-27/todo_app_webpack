@@ -15,11 +15,7 @@ module.exports = {
         clean: true,
         assetModuleFilename: "images/[name][ext]",
     },
-    devServer: {
-        contentBase: path.join(__dirname, 'dist'),
-        compress: true,
-        port: 9000,
-    },
+
     module: {
         rules: [
             {
